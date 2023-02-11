@@ -7,7 +7,7 @@ permissions:
      id-token: write
      contents: write
 env:
-  AWS_REGION :  us-east-1
+  AWS_REGION :  us-west-2
 #   REACT_APP_API_BASE_URL: ${{ secrets.DRFLEET_REACT_APP_API_BASE_URL }}
 #   REACT_APP_CLOUD_FRONT_BASE_URL: ${{ secrets.REACT_APP_CLOUD_FRONT_BASE_URL }}
 jobs:
