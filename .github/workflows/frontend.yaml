@@ -13,9 +13,6 @@ env:
 jobs:
   GenerativeAI-UI-POC:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-         working-directory: simple-reactjs-app/
     permissions:
        id-token: write
        contents: write
