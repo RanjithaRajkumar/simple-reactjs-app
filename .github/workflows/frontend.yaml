@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-         working-directory: reactapp/simple-reactjs-app/
+         working-directory: simple-reactjs-app/
     permissions:
        id-token: write
        contents: write
