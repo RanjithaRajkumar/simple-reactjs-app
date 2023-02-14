@@ -17,7 +17,6 @@ jobs:
        id-token: write
        contents: write
     steps:
-
        - name: Check out code
          uses: actions/checkout@v2
 
@@ -44,14 +43,14 @@ jobs:
          run: pwd
 
         - name: Configure AWS credentials
-         uses: aws-actions/configure-aws-credentials@v1
-         with:
+          uses: aws-actions/configure-aws-credentials@v1
+          with:
            aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
            aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
            aws-region: ${{ env.AWS_REGION }}
 
         - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./build s3://samplereactapplication/
+          run: aws s3 sync ./build s3://samplereactapplication/
 
         # - name: Invalidate CloudFront
       #    run: aws cloudfront create-invalidation --distribution-id E22QI9TUPXRBVL --paths "/*"
