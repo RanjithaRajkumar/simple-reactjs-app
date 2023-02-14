@@ -17,8 +17,10 @@ jobs:
        id-token: write
        contents: write
     steps:
+
        - name: Check out code
          uses: actions/checkout@v2
+
        - name: Setup node
          uses: actions/setup-node@v1
 
@@ -51,5 +53,5 @@ jobs:
         - name: Deploy static site to S3 bucket
           run: aws s3 sync ./build s3://samplereactapplication/
 
-        # - name: Invalidate CloudFront
+      #  - name: Invalidate CloudFront
       #    run: aws cloudfront create-invalidation --distribution-id E22QI9TUPXRBVL --paths "/*"
