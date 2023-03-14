@@ -11,24 +11,17 @@ env:
 #   REACT_APP_API_BASE_URL: ${{ secrets.DRFLEET_REACT_APP_API_BASE_URL }}
 #   REACT_APP_CLOUD_FRONT_BASE_URL: ${{ secrets.REACT_APP_CLOUD_FRONT_BASE_URL }}
 jobs:
-  GenerativeAI-UI-POC:
+    POC:
     runs-on: ubuntu-latest
     permissions:
        id-token: write
        contents: write
     steps:
-
        - name: Check out code
          uses: actions/checkout@v2
 
        - name: Setup node
          uses: actions/setup-node@v1
-
-      #  - name: API URL variable
-      #    uses: CallePuzzle/envvar-to-dotenv-action@0.1.0
-      #    with:
-      #      variableNames: ^REACT_(APP.*)
-
        - name: Use Node.js 16.x
          uses: actions/setup-node@v1
          with:
@@ -53,5 +46,5 @@ jobs:
         - name: Deploy static site to S3 bucket
           run: aws s3 sync ./build s3://samplereactapplication/
 
-      #  - name: Invalidate CloudFront
+        # - name: Invalidate CloudFront
       #    run: aws cloudfront create-invalidation --distribution-id E22QI9TUPXRBVL --paths "/*"
