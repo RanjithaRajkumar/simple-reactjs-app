@@ -11,7 +11,7 @@ env:
 #   REACT_APP_API_BASE_URL: ${{ secrets.DRFLEET_REACT_APP_API_BASE_URL }}
 #   REACT_APP_CLOUD_FRONT_BASE_URL: ${{ secrets.REACT_APP_CLOUD_FRONT_BASE_URL }}
 jobs:
-    POC:
+  POC:
     runs-on: ubuntu-latest
     permissions:
        id-token: write
